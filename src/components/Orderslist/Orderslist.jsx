@@ -126,10 +126,10 @@ export default function OrdersList() {
                 <Grid padding={'30px'} maxW={'100%'} color={'#fff'} fontSize={'12px'} backgroundColor={'teal'} fontWeight={'600'} templateColumns='repeat(15, 1fr)' gap={2} borderBottom={'1px solid #eee'}>
                     <GridItem colSpan={1}>Nº Pedido</GridItem>
                     <GridItem colSpan={2}>Nome do Responsável</GridItem>
-                    <GridItem colSpan={1}>Nome do Aluno</GridItem>
+                    <GridItem colSpan={2}>Nome do Aluno</GridItem>
                     <GridItem colSpan={1}>RG Aluno</GridItem>
                     <GridItem colSpan={1}>Telefone</GridItem>
-                    <GridItem colSpan={4}>Passeio</GridItem>
+                    <GridItem colSpan={3}>Passeio</GridItem>
                     <GridItem colSpan={1}>Série</GridItem>
                     
                     <GridItem colSpan={1}>Data do pagamento</GridItem>
@@ -146,10 +146,10 @@ export default function OrdersList() {
 
                             <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Número do pedido']}</GridItem>  
                             <GridItem display={'flex'} alignItems={'center'} colSpan={2}>{order['Nome do cliente']}</GridItem>
-                            <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Nome do aluno']}</GridItem>
+                            <GridItem display={'flex'} alignItems={'center'} colSpan={2}>{order['Nome do aluno']}</GridItem>
                             <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['RG']}</GridItem>
                             <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Telefone']}</GridItem>
-                            <GridItem display={'flex'} alignItems={'center'} colSpan={4}>{order['Passeio']}</GridItem>
+                            <GridItem display={'flex'} alignItems={'center'} colSpan={3}>{order['Passeio']}</GridItem>
                             <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Série']} {order['Turma']}</GridItem>
                             
                             <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Data do pagamento']}</GridItem>
