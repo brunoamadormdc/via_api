@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 export class ListFactory {
     constructor() {
         this.list = [];
@@ -29,8 +31,8 @@ export class ListFactory {
                 'state': item?.billing?.state || '',
                 'Nome do cliente': `${item?.billing?.first_name || ''} ${item?.billing?.last_name || ''}`,
                 'RG': item?.billing?.rg || '',
-                'Data': item?.date_created || '',
-                'Data do pagamento': item?.date_paid || '',
+                'Data': dataConvert(item?.date_created) || '',
+                'Data do pagamento': dataConvert(item?.date_paid) || '',
                 'Número': item?.billing?.number || '',
                 'Cidade': item?.billing?.city || '',
                 'Método de pagamento': item?.payment_method_title || '',
@@ -46,6 +48,13 @@ export class ListFactory {
             
         })
     }
+}
+
+const dataConvert = (value) => {
+    if(value == '') return ''
+    if(value == null) return ''
+    if(value == undefined) return ''
+    return moment(value).format('DD/MM/YYYY')
 }
 
 const toSnake = {
