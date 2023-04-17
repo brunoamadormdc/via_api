@@ -129,9 +129,9 @@ export default function OrdersList() {
                     <GridItem colSpan={1}>Nome do Aluno</GridItem>
                     <GridItem colSpan={1}>RG Aluno</GridItem>
                     <GridItem colSpan={1}>Telefone</GridItem>
-                    <GridItem colSpan={3}>Passeio</GridItem>
+                    <GridItem colSpan={4}>Passeio</GridItem>
                     <GridItem colSpan={1}>Série</GridItem>
-                    <GridItem colSpan={1}>Data</GridItem>
+                    
                     <GridItem colSpan={1}>Data do pagamento</GridItem>
                     <GridItem colSpan={1}>Pagamento</GridItem>
                     <GridItem colSpan={2}>Status</GridItem>
@@ -149,9 +149,9 @@ export default function OrdersList() {
                             <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Nome do aluno']}</GridItem>
                             <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['RG']}</GridItem>
                             <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Telefone']}</GridItem>
-                            <GridItem display={'flex'} alignItems={'center'} colSpan={3}>{order['Passeio']}</GridItem>
+                            <GridItem display={'flex'} alignItems={'center'} colSpan={4}>{order['Passeio']}</GridItem>
                             <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Série']} {order['Turma']}</GridItem>
-                            <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Data']}</GridItem>
+                            
                             <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Data do pagamento']}</GridItem>
                             <GridItem display={'flex'} alignItems={'center'} colSpan={1}>
                                 <Badge borderRadius={'5px'} padding={'2'} colorScheme={paymentColor[order['Aguardando pagamento']]}>{order['Aguardando pagamento']}</Badge>
