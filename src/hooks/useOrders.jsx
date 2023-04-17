@@ -4,7 +4,7 @@ import { orders } from "@/store/orders";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { orders_filter, orders_search } from "@/store/orders";
 
-export default function UseOrders() {
+export default function useOrders() {
     const api = useApi()
     const [ord, setOrd] = useRecoilState(orders)
     const ord_filter = useRecoilValue(orders_filter)

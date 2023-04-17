@@ -4,7 +4,7 @@ import { useRecoilState } from "recoil"
 import useApi from "./services/useApi"
 
 
-export default function useproducts() {
+export default function useProducts() {
     
     const api = useApi()
     const [prod, setProd] = useRecoilState(products)
