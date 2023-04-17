@@ -129,7 +129,7 @@ export default function OrdersList() {
                     <GridItem colSpan={1}>Nome do Aluno</GridItem>
                     <GridItem colSpan={1}>RG Aluno</GridItem>
                     <GridItem colSpan={1}>Telefone</GridItem>
-                    <GridItem colSpan={2}>Passeio</GridItem>
+                    <GridItem colSpan={3}>Passeio</GridItem>
                     <GridItem colSpan={1}>Série</GridItem>
                     <GridItem colSpan={1}>Data</GridItem>
                     <GridItem colSpan={1}>Data do pagamento</GridItem>
@@ -149,7 +149,7 @@ export default function OrdersList() {
                             <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Nome do aluno']}</GridItem>
                             <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['RG']}</GridItem>
                             <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Telefone']}</GridItem>
-                            <GridItem display={'flex'} alignItems={'center'} colSpan={2}>{order['Passeio']}</GridItem>
+                            <GridItem display={'flex'} alignItems={'center'} colSpan={3}>{order['Passeio']}</GridItem>
                             <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Série']} {order['Turma']}</GridItem>
                             <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Data']}</GridItem>
                             <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Data do pagamento']}</GridItem>
