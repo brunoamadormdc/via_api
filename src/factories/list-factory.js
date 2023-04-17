@@ -44,6 +44,7 @@ export class ListFactory {
                 'Série':item?.meta_data.filter(val => val.key == '_billing_serie')[0].value || '',
                 'Nome do aluno':item?.meta_data.filter(val => val.key == '_billing_nome_aluno')[0].value || '',
                 'Turma':item?.meta_data.filter(val => val.key == '_billing_turma')[0].value || '',
+                'Número do pedido':item?.number || '',
             }
             
         })

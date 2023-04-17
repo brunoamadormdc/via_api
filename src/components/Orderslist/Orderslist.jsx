@@ -123,9 +123,10 @@ export default function OrdersList() {
                 <div onClick={()=> handleSetbusca()} style={{ position:'absolute', top:'25px', right:'20px', cursor:'pointer' }}>
                 <Search2Icon w={6} h={6} color="#fff" />
                 </div>
-                <Grid padding={'30px'} maxW={'100%'} color={'#fff'} fontSize={'12px'} backgroundColor={'teal'} fontWeight={'600'} templateColumns='repeat(14, 1fr)' gap={2} borderBottom={'1px solid #eee'}>
+                <Grid padding={'30px'} maxW={'100%'} color={'#fff'} fontSize={'12px'} backgroundColor={'teal'} fontWeight={'600'} templateColumns='repeat(15, 1fr)' gap={2} borderBottom={'1px solid #eee'}>
+                    <GridItem colSpan={1}>Nº Pedido</GridItem>
                     <GridItem colSpan={2}>Nome do Responsável</GridItem>
-                    <GridItem colSpan={2}>Nome do Aluno</GridItem>
+                    <GridItem colSpan={1}>Nome do Aluno</GridItem>
                     <GridItem colSpan={1}>RG Aluno</GridItem>
                     <GridItem colSpan={1}>Telefone</GridItem>
                     <GridItem colSpan={2}>Passeio</GridItem>
@@ -141,10 +142,11 @@ export default function OrdersList() {
 
                 {ord_filter != null ?
                     ord_filter.list.map((order) => (
-                        <Grid padding={'30px'} maxW={'100%'} fontSize={'12px'} templateColumns='repeat(14, 1fr)' key={order['ID']} gap={2} borderBottom={'1px solid teal'}>
+                        <Grid padding={'30px'} maxW={'100%'} fontSize={'12px'} templateColumns='repeat(15, 1fr)' key={order['ID']} gap={2} borderBottom={'1px solid teal'}>
 
+                            <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Número do pedido']}</GridItem>  
                             <GridItem display={'flex'} alignItems={'center'} colSpan={2}>{order['Nome do cliente']}</GridItem>
-                            <GridItem display={'flex'} alignItems={'center'} colSpan={2}>{order['Nome do aluno']}</GridItem>
+                            <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Nome do aluno']}</GridItem>
                             <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['RG']}</GridItem>
                             <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Telefone']}</GridItem>
                             <GridItem display={'flex'} alignItems={'center'} colSpan={2}>{order['Passeio']}</GridItem>
