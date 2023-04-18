@@ -6,7 +6,7 @@ import { Search2Icon } from '@chakra-ui/icons'
 
 const buttonColor = {
     'Cancelado': 'red',
-    'Processando': 'teal',
+    'Pago': 'teal',
     'Pendente': 'yellow',
     'Reembolsado': 'messenger'
 
