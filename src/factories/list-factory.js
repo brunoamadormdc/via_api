@@ -88,7 +88,7 @@ const needs_payment = {
 
 const fromStatus = {
     'pending': 'Pendente',
-    'processing': 'Processando',
+    'processing': 'Pago',
     'on-hold': 'Em espera',
     'completed': 'Concluído',
     'cancelled': 'Cancelado',
