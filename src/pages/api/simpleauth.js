@@ -1,5 +1,5 @@
 const authToken = 'a5c9091a7db567f6dd83c1d60f55d9e239f5d698'
-const validPassword = 'vialeoes34567@vialeoes.com.br'
+const validPassword = 'vialeoes788926@vialeoes.com.br'
 
 export default async function handler(req, res) {
 
