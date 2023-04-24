@@ -3,33 +3,55 @@ import useApi from "./services/useApi";
 import { orders } from "@/store/orders";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { orders_filter, orders_search } from "@/store/orders";
+import {loader as loaderAtom} from '@/store/loader'
 
 export default function useOrders() {
     const api = useApi()
     const [data, setData] = useState({ per_page: 200, page: 1, search: null, search_type: '[billing.first_name]' })
+    const [itensPage, setItensPage] = useState({ totalPages: null, page: 1 })
     const [ord, setOrd] = useRecoilState(orders)
     const ord_filter = useRecoilValue(orders_filter)
     const [_orders_search, setOrders_search] = useRecoilState(orders_search)
+    const [_loader, setLoader] = useRecoilState(loaderAtom)
 
     useEffect(() => {
-        getOrders({per_page:150})
+        const item = localStorage.getItem('viaLeoesToken')
+        if (!item) {
+          window.location.href = '/login'
+          
+        }
+        else {
+          getOrders({per_page:200})
+                             
+        }
+        
     },[])
 
     
 
     const getOrders = async (data) => {
+        setLoader(true)
         try{
-            const response = await api.postService('orders',data)
+            const response = await api.postServiceAuth('orders',data)
             setOrd(response.data)
+            setItensPage({...itensPage, totalPages: response.data.totalPages})
             setOrders_search({ ..._orders_search, value: '', field:'Nome do cliente' })
+             setLoader(false)
         }
         catch(error){
-            console.log(error)
+            setLoader(false)
+            if(error.response.status === 400) {
+                alert('Não encontrado...')
+            }
+            if(error.response.status === 401) {
+                localStorage.removeItem('viaLeoesToken')
+                window.location.href = '/login'
+            }
         }
     }
 
     return {
-        getOrders, ord_filter, _orders_search, setOrders_search, data, setData
+        getOrders, ord_filter, _orders_search, setOrders_search, data, setData, itensPage, setItensPage
     }
 
 }

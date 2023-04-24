@@ -15,7 +15,7 @@ export default function useProducts() {
 
     const getProducts = async () => {
         try{
-            const response = await api.postService('products')
+            const response = await api.postServiceAuth('products')
             setProd(response.data)
         }
         catch(error){

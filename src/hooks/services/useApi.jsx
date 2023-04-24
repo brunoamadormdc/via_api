@@ -7,7 +7,16 @@ export default function useApi() {
         headers: { 'Content-Type': 'application/json'}
     })
 
+    const headersCommon = () => {
+        return HTTP.defaults.headers.common['Authorization'] = `${Boolean(localStorage.getItem('viaLeoesToken')) ? localStorage.getItem('viaLeoesToken') : ''}`
+    }
+
     const postService = async (url, data={}) => {
+        return HTTP.post(url, data)
+    }
+
+    const postServiceAuth = async (url, data={}) => {
+        headersCommon()
         return HTTP.post(url, data)
     }
 
@@ -17,6 +26,6 @@ export default function useApi() {
 
 
     return {
-        postService, getService
+        postService, postServiceAuth, getService
     }
 }
