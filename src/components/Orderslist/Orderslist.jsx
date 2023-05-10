@@ -34,7 +34,8 @@ const typeSearch = {
     '[billing.email]': 'por_email',
     '_billing_nome_aluno': 'por_nome_aluno',
     '[line_items[0].name]': 'por_passeio',
-    'status': 'por_status'
+    'status': 'por_status',
+    
 }
 
 

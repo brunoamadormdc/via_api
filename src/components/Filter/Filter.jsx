@@ -11,6 +11,7 @@ export default function Filter({ handleSearchitens, searchOrders, data, searchTy
                 <FormLabel>Tipo de Busca</FormLabel>
                 <Select variant={'flushed'} defaultValue={typeSearch[data.search_type]} onBlur={(e) => handleSearchitens(searchType[e.target.value], 'search_type')} placeholder='Tipo de Busca'>
                     <option value='por_nome'>Nome do Responsável</option>
+                    <option value='por_nome_aluno'>Nome do Aluno</option>
                     <option value='por_email'>Email do Responsável</option>
                     <option value='por_passeio'>Nome do Passeio</option>
                 </Select>

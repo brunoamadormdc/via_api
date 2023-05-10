@@ -32,11 +32,12 @@ export default function useOrders() {
     const getOrders = async (data) => {
         setLoader(true)
         try{
-            const response = await api.postServiceAuth('orders',data)
+            let url = data?.search_type == '_billing_nome_aluno' ? 'ordersfiltered' : 'orders'
+            const response = await api.postServiceAuth(url,data)
             setOrd(response.data)
             setItensPage({...itensPage, totalPages: response.data.totalPages})
             setOrders_search({ ..._orders_search, value: '', field:'Nome do cliente' })
-             setLoader(false)
+            setLoader(false)
         }
         catch(error){
             setLoader(false)

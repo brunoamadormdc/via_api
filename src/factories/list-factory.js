@@ -19,7 +19,13 @@ export class ListFactory {
         this.totalAcc = 0
         this.list = list.map(item => {
             this.totalAcc += parseInt(item?.total) || 0
-            return {
+            return this.listObject(item)
+            
+        })
+    }
+
+    listObject = (item) => {
+        return {
                 'ID': item.id,
                 'Passeio': item?.line_items[0]?.name || '',
                 'Preço': item?.line_items[0]?.price || 0,
@@ -46,8 +52,6 @@ export class ListFactory {
                 'Turma':item?.meta_data.filter(val => val.key == '_billing_turma')[0].value || '',
                 'Número do pedido':item?.number || '',
             }
-            
-        })
     }
 }
 
