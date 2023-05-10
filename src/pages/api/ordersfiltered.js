@@ -27,7 +27,7 @@ export default async function handler(req, res) {
         let aluno_nome = string_to_slug(body_params.search)
         console.log(aluno_nome)
         try {
-            await HTTP.get(`orders?per_page=3000`)
+            await HTTP.get(`orders?per_page=1000`)
             .then(response => {
                 
                 list.getHeaders(response.headers)
