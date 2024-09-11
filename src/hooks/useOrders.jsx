@@ -7,7 +7,7 @@ import {loader as loaderAtom} from '@/store/loader'
 
 export default function useOrders() {
     const api = useApi()
-    const [data, setData] = useState({ per_page: 200, page: 1, search: null, search_type: '[billing.first_name]' })
+    const [data, setData] = useState({ per_page: 100, page: 1, search: null, search_type: '[billing.first_name]' })
     const [itensPage, setItensPage] = useState({ totalPages: null, page: 1 })
     const [ord, setOrd] = useRecoilState(orders)
     const ord_filter = useRecoilValue(orders_filter)
@@ -21,7 +21,7 @@ export default function useOrders() {
           
         }
         else {
-          getOrders({per_page:200})
+          getOrders({per_page:100})
                              
         }
         

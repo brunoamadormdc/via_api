@@ -24,7 +24,7 @@ export default async function handler(req, res) {
         }
 
         try {
-            await HTTP.get(`products?per_page=1000&_fields=id,name`)
+            await HTTP.get(`products?per_page=100&_fields=id,name`)
             .then(response => {
                 res.status(200).json(response.data);
             })
