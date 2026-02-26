@@ -81,6 +81,7 @@ export default function OrdersList() {
                 'Responsável': item['Nome do cliente'],
                 'Aluno': item['Nome do aluno'],
                 'RG': item['RG'],
+                'CPF': item['CPF'],
                 'Telefone': item['Telefone'],
                 'Passeio': item['Passeio'],
                 'Série': item['Série'],
@@ -152,9 +153,11 @@ export default function OrdersList() {
 
                     <Grid padding={'30px'} maxW={'100%'} color={'#fff'} fontSize={'12px'} backgroundColor={'teal'} fontWeight={'600'} templateColumns='repeat(14, 1fr)' gap={2} borderBottom={'1px solid #eee'}>
                         <GridItem colSpan={1}>Pedido</GridItem>
-                        <GridItem colSpan={3}>Responsável</GridItem>
-                        <GridItem colSpan={3}>Aluno</GridItem>
+                        <GridItem colSpan={2}>Responsável</GridItem>
+                        <GridItem colSpan={2}>Aluno</GridItem>
                         <GridItem colSpan={1}>RG</GridItem>
+                        <GridItem colSpan={1}>CPF</GridItem>
+                        <GridItem colSpan={1}>Data de Nascimento</GridItem>
                         <GridItem colSpan={1}>Telefone</GridItem>
                         <GridItem colSpan={2}>Passeio</GridItem>
                         <GridItem colSpan={1}>Série</GridItem>
@@ -172,9 +175,11 @@ export default function OrdersList() {
                             <Grid onClick={() => exportToExcel()} padding={'30px'} maxW={'100%'} fontSize={'12px'} templateColumns='repeat(14, 1fr)' key={order['ID']} gap={2} borderBottom={'1px solid teal'}>
 
                                 <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Número do pedido']}</GridItem>
-                                <GridItem display={'flex'} alignItems={'center'} colSpan={3}>{order['Nome do cliente']}</GridItem>
-                                <GridItem display={'flex'} alignItems={'center'} colSpan={3}>{order['Nome do aluno']}</GridItem>
+                                <GridItem display={'flex'} alignItems={'center'} colSpan={2}>{order['Nome do cliente']}</GridItem>
+                                <GridItem display={'flex'} alignItems={'center'} colSpan={2}>{order['Nome do aluno']}</GridItem>
                                 <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['RG']}</GridItem>
+                                <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['CPF']}</GridItem>
+                                <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Data de Nascimento']}</GridItem>
                                 <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Telefone']}</GridItem>
                                 <GridItem display={'flex'} alignItems={'center'} colSpan={2}>{order['Passeio']}</GridItem>
                                 <GridItem display={'flex'} alignItems={'center'} colSpan={1}>{order['Série']} {order['Turma']}</GridItem>
